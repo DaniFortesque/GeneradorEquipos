@@ -1,10 +1,10 @@
 
 public class Jugador {
 	
-	public String nombre;
-	public String apellidos;
-	public String posicion;
-	public int dorsal;
+	private String nombre;
+	private String apellidos;
+	private String posicion;
+	private int dorsal;
 	
 	public Jugador(String nombre, String apellidos, String posicion, int dorsal) {
 		this.nombre=nombre;
