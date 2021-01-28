@@ -24,8 +24,8 @@ public class Jugador {
 	public void setPosicion(String posicion) {
 		this.posicion=posicion;
 	}
-	public void setDorsal(int Dorsal) {
-		
+	public void setDorsal(int dorsal) {
+		this.dorsal=dorsal;
 	}
 	public String getNombre() {
 		return this.nombre;
