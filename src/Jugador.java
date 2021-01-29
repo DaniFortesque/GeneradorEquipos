@@ -40,5 +40,9 @@ public class Jugador {
 		return this.dorsal;
 	}
 	
+	public String getEquipo() {
+		return "|"+this.dorsal+"| "+this.apellidos+", "+this.nombre+" - "+this.posicion;
+	}
+	
 
 }
