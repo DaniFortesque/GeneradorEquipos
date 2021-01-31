@@ -4,9 +4,9 @@ public class Jugador {
 	private String nombre;
 	private String apellidos;
 	private String posicion;
-	private int dorsal;
+	private String dorsal;
 	
-	public Jugador(String nombre, String apellidos, String posicion, int dorsal) {
+	public Jugador(String nombre, String apellidos, String posicion, String dorsal) {
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 		this.posicion=posicion;
@@ -21,11 +21,14 @@ public class Jugador {
 	public void setApellidos(String apellido1, String apellido2) {
 		this.apellidos=apellido1+" "+apellido2;
 	}
+	public void setApellidos(String apellidos) {
+		this.apellidos=apellidos;
+	}
 	public void setPosicion(String posicion) {
 		this.posicion=posicion;
 	}
-	public void setDorsal(int Dorsal) {
-		
+	public void setDorsal(String dorsal) {
+		this.dorsal=dorsal;
 	}
 	public String getNombre() {
 		return this.nombre;
@@ -36,8 +39,12 @@ public class Jugador {
 	public String getPosicion() {
 		return this.posicion;
 	}
-	public int getDorsal() {
+	public String getDorsal() {
 		return this.dorsal;
+	}
+	
+	public String getJugador() {
+		return "|"+this.dorsal+"| "+this.apellidos+", "+this.nombre+" - "+this.posicion;
 	}
 	
 
