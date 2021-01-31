@@ -34,8 +34,6 @@ public class Principal {
 				case 3:
 					System.out.println(equipo[3].getJugador());
 					break;
-					
-					
 			}
 		}
 	}
@@ -51,11 +49,11 @@ public class Principal {
 		
 		equipo = new Jugador[numeroJugadores];
 		for(int i=0; i<numeroJugadores; i++) { //Este for va generando los jugadores y los añade en una posicion de la array
-			Jugador jugador = new Jugador("","","","");
+			Jugador jugador = new Jugador("","","",0);
 			jugador.setNombre(nombre[(int) (Math.random()*16)]);
-			jugador.setApellidos(apellidos[(int) (Math.random()*22)], apellidos[(int) (Math.random()*22)]);
+			jugador.setApellidos(apellidos[(int) (Math.random()*22)]+" "+apellidos[(int) (Math.random()*22)]);
 			jugador.setPosicion(probabilidadPosicion((int) (Math.random()*9)));
-			jugador.setDorsal(""+(i+1));
+			jugador.setDorsal((i+1));
 			equipo[i]=jugador;
 		}
 		return equipo;
@@ -132,14 +130,14 @@ public class Principal {
 	         br.reset(); //reseteamos la posicion de lectura a la marca inicial
 	         
 	         for(int e=0; e<i; e++) { //recorre cada posicion de la array
-	        	 Jugador jugador = new Jugador("","","",""); //creamos un jugador 'vacio'
+	        	 Jugador jugador = new Jugador("","","",0); //creamos un jugador 'vacio'
 	        	 linea=br.readLine();
 	        	 
 	        	 for(int a=0; a<linea.length(); a++) { //recorre cada caracter de la linea leida y los separa en atributos
 	        		 if (linea.charAt(a)!='/') {
 	        			 cadena = cadena+linea.charAt(a); //almacena cada caracter en una cadena hasta que se encuentra con un '/'
 	        		 }else if(linea.charAt(a)=='/' && contador==0) {
-	        			 jugador.setDorsal(cadena);
+	        			 jugador.setDorsal(Integer.parseInt(cadena));
 	        			 cadena="";
 	        			 contador++;
 	        		 }else if(linea.charAt(a)=='/' && contador==1) {
@@ -176,6 +174,7 @@ public class Principal {
 	}
 }
 
+//http://chuwiki.chuidiang.org/index.php?title=Generar_n%C3%BAmeros_aleatorios_en_Java --- generar numeros aleatorios
 //https://decodigo.com/java-crear-archivos-de-texto --- crear archivo de texto y escribir
 //http://chuwiki.chuidiang.org/index.php?title=Lectura_y_Escritura_de_Ficheros_en_Java --- leer un archivo de texto
 //http://ayudaitver.blogspot.com/2014/07/uso-basico-del-bufferedreader.html --- uso de los metodos de BufferedReader
