@@ -21,11 +21,11 @@ public class Jugador {
 		this.apellidos=apellidos;
 	}
 	public void setPosicion(String posicion) {
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		while(posicion!="Delantero" && posicion!="Defensa" && posicion!="Centrocampista" && posicion!="Portero") {
 			System.out.println("La posicion introducida es incorrecta, por favor elige una entre Delantero/Defensa/Portero/Centrocampista");
 			posicion = sc.nextLine();
-		}
+		}*/
 		this.posicion=posicion;
 	}
 	public void setDorsal(int dorsal) {
